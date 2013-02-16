@@ -3,7 +3,9 @@ import os
 from jinja2 import Environment,FileSystemLoader
 
 urls = ("/.*", "hello")
-
+from pymongo import MongoClient
+connection = MongoClient()
+db = connection.webpy
 
 def render_template(template_name, **context):
     extensions = context.pop('extensions', [])

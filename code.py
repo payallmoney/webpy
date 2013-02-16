@@ -4,11 +4,11 @@ import login
 import utils
 urls = (
   "/login", login.app_login,
-  "/", "index"
+  "/(.*)", "index"
 )
 
 class index:
-    def GET(self):
+    def GET(self,url):
         return utils.render_template('index.html')
 
 app = web.application(urls, locals())

@@ -2,20 +2,23 @@
 <html style="height:100%;width:100%;">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
-	<link rel="stylesheet" type="text/css" href="/js/easyui/themes/default/easyui.css">
-	<link rel="stylesheet" type="text/css" href="/js/easyui/themes/icon.css">
-	<script type="text/javascript" src="/js/easyui/jquery-1.4.2.min.js"></script>
-	<script type="text/javascript" src="/js/easyui/jquery.easyui.min.js"></script>
+<title>系统登录</title>
+	<link rel="stylesheet" type="text/css" href="../static/js/easyui/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../static/js/easyui/themes/icon.css">
+	<script type="text/javascript" src="../static/js/easyui/jquery-1.8.0.min.js"></script>
+	<script type="text/javascript" src="../static/js/easyui/jquery.easyui.min.js"></script>
+	<script>
+
+	</script>
 </head>
 <body style="height:100%;width:100%;overflow:hidden;border:none;" >
-	<div id="win" class="easyui-window" title="Login" style="width:300px;height:180px;">
-		<form style="padding:10px 20px 10px 40px;">
-			<p>Name: <input type="text"></p>
-			<p>Pass: <input type="password"></p>
+	<div id="win" class="easyui-window" collapsible=false minimizable=false  maximizable=false  closable=false draggable=false resizable=false  title="登录" style="width:330px;height:190px;">
+		<form style="padding:10px 20px 10px 40px;" action='/login' method="POST" >
+			<p>用户名: <input name='username' type="text" value='{{username}}'></p>
+			<p>密&nbsp;&nbsp;码: <input name='password' type="password" value='{{password}}'><font color=red>{{msg}}</font></p>
 			<div style="padding:5px;text-align:center;">
-				<a href="#" class="easyui-linkbutton" icon="icon-ok">Ok</a>
-				<a href="#" class="easyui-linkbutton" icon="icon-cancel">Cancel</a>
+				<a href="javascript:$('form:first').submit()" class="easyui-linkbutton" icon="icon-ok">登录</a>
+				<a href="javascript:$('input').each(function(n){$(this).val('')});" class="easyui-linkbutton" icon="icon-cancel">取消</a>
 			</div>
 		</form>
 	</div>
