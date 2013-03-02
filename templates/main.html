@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html style="height:100%;width:100%;">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>系统登录</title>
+	<link rel="stylesheet" type="text/css" href="../static/js/easyui/themes/default/easyui.css">
+	<link rel="stylesheet" type="text/css" href="../static/js/easyui/themes/icon.css">
+	<link rel="stylesheet" type="text/css" href="../static/css/index.css">
+	<script type="text/javascript" src="../static/js/easyui/jquery-1.8.0.min.js"></script>
+	<script type="text/javascript" src="../static/js/easyui/jquery.easyui.min.js"></script>
+	<script>
+		function open1(plugin,title){
+				if ($('#main-tabs').tabs('exists',title)){
+					$('#main-tabs').tabs('select', title);
+				} else {
+					$('#main-tabs').tabs('add',{
+						title:title,
+						fit:true,
+						border:false,
+						href:"/"+plugin,
+						closable:true
+					});
+				}
+			}
+	</script>
+</head>
+<body class="easyui-layout" style='margin:0 0 0 10px;background-color:#e0ecff' >  
+    <div data-options="region:'north',border:false" style="height:40px;background-color:#e0ecff" >
+		<img src = '../static/images/icons/201101251540294293.png' style='margin:0px' align="absmiddle"/>
+		<font style="margin-top: 10px ; font-weight: bold; font-size: 16px; color: #44454a;">众烁石材进销存管理系统</font>
+		<p style="margin-left:10px;margin-right:10px;float: right; color: gray;">
+			<a href="/" >退出系统</a>
+		</p>
+		<p style="margin-left:10px;float: right; color: gray; padding-right: 5px;">用户：{{username}}</p>
+	</div>  
+    <div data-options="region:'south'" style="height:20px;background-color:#e0ecff;"></div>  
+    <!--<div data-options="region:'east',iconCls:'icon-reload',title:'East',split:true" style="width:100px;"></div>  -->
+    <div data-options="region:'west',title:'菜单'" style="width:170px;">
+		<div class="easyui-accordion" data-options="animate:false,fit:true">  
+			<div title="系统管理" data-options="iconCls:'icon-setting'" style="overflow:auto;padding:3px;">  
+				<div class='menu_div' onclick='open1("sysmanager","系统管理")'>
+					<img src="../static/images/menu/9.gif" style="margin-top:5px;">
+					<div style="margin-top:5px;font-size:15px">系统管理</div>
+				</div>
+			</div>  
+			<div title="系统录入" data-options="iconCls:'icon-work',selected:true" style="overflow:auto;padding:3px;">  
+				<div class='menu_div' onclick='open1("settlemanager","结算表管理")'>
+					<img src="../static/images/menu/female_business_01.gif" style="margin-top:5px;">
+					<div style="margin-top:5px;font-size:15px">结算表管理</div>
+				</div> 
+				<div class='menu_div' onclick='open1("costmanager","费用管理")'>
+					<img src="../static/images/menu/7.gif" style="margin-top:5px;">
+					<div style="margin-top:5px;font-size:15px">费用管理</div>
+				</div> 
+			</div>  
+			<div title="其他功能" data-options="iconCls:'icon-query'"style="overflow:auto;padding:3px;">    
+				<div class='menu_div' onclick='open1("querys","统计查询")'>
+					<img src="../static/images/menu/25.gif" style="margin-top:5px;">
+					<div style="margin-top:5px;font-size:15px">统计查询</div>
+				</div>
+			</div>  
+		</div>  
+	</div>  
+    <div data-options="region:'center'" >
+		<div id="main-tabs" class="easyui-tabs" data-options='fit:true' >  
+			<div title="简介" style="padding:20px;display:none;">  
+				简介   
+			</div>  
+		</div> 
+	</div>  
+	
+	
+
+</body>  
+</html>

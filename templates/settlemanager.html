@@ -1,0 +1,42 @@
+<body class="easyui-layout">
+	<table id="settle-grid" class="easyui-datagrid" style="margin-bottom:50px"  
+			data-options="fitColumns:false,singleSelect:true,pagination:true,autoRowHeight:false,fit:true,toolbar:'#settle-tools',pagination:true,pageNumber:1,pageSize:20,pageList:[10,20,30,50]" >  
+		<thead>  
+			<tr>  
+				<th data-options="field:'code',width:100">代码</th>  
+				<th data-options="field:'name',width:100">名称</th>  
+				<th data-options="field:'price',width:100,align:'right'">价格</th>  
+			</tr>  
+		</thead>  
+	</table>  
+	<div id="settle-tools" >
+		<a id="btn_add" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-add'">增加</a> 
+		<a id="btn_edit" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-edit'">修改</a> 
+		<a id="btn_remove" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-remove'">删除</a> 
+		<input id="settle-searcher"></input>  
+		<div id="settle-drop" style="width:120px">  
+			<div data-options="name:'all'">按日期</div>  
+			<div data-options="name:'sports'">按公司</div>  
+		</div>  		
+	</div>
+	
+<script>
+	$.parser.onComplete = function(){
+		var pager = $('#settle-grid').datagrid('getPager');
+		pager.pagination({ 
+			showPageList:false,  		
+			total:1,
+			pageSize :20,
+			beforePageText : "第",
+			afterPageText : "页",
+			displayMsg :"共{total}行"
+		});
+		$('#settle-searcher').searchbox({   
+			searcher:function(value,name){   
+				alert(value + "," + name)   
+			},   
+			menu:'#settle-drop',   
+			prompt:'请输入查询条件'  
+		}); 
+	};
+</script>

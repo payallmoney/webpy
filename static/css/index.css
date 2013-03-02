@@ -1,0 +1,16 @@
+.menu_div{
+	cursor: pointer;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	border : 1px solid #CCF5CC;
+	margin:0 auto;
+	width: 100%;
+	height: 110px;
+	text-align: center;
+	vertical-align: middle;
+	font-weight: bold;
+	font-size: 14px;
+}
+.icon-work{
+	background:url('../images/icons/hypertension_manage_16_16.png') no-repeat center center;
+}
