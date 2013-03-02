@@ -62,3 +62,9 @@
 .icon-mini-refresh{
 	background:url('icons/mini_refresh.png') no-repeat center center;
 }
+.icon-setting{
+	background:url('icons/setting.png') no-repeat center center;
+}
+.icon-query{
+	background:url('icons/query.png') no-repeat center center;
+}

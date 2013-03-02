@@ -1,15 +1,19 @@
 #-*-coding:utf-8 -*-
 import web
-import login
+import modules.main
+import modules.SettleManager
+import modules.CostManager
 import utils
 urls = (
-  "/login", login.app_login,
+  "/main", modules.main.app_main,
+  "/settlemanager", modules.SettleManager.app_settlemanager,
+  "/costmanager", modules.CostManager.app_costmanager,
   "/(.*)", "index"
 )
 
 class index:
     def GET(self,url):
-        return utils.render_template('index.html')
+        return utils.render_template('login.html')
 
 app = web.application(urls, locals())
 
