@@ -3,11 +3,15 @@ import web
 import modules.main
 import modules.SettleManager
 import modules.CostManager
+import modules.SysManager
+import modules.Options
 import utils
 urls = (
   "/main", modules.main.app_main,
   "/settlemanager", modules.SettleManager.app_settlemanager,
   "/costmanager", modules.CostManager.app_costmanager,
+  "/sysmanager", modules.SysManager.app_sysmanager,
+  "/options", modules.Options.app_options,
   "/(.*)", "index"
 )
 

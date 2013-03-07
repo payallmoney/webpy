@@ -68,3 +68,8 @@ if ($.fn.datetimebox && $.fn.datebox){
 		missingMessage: $.fn.datebox.defaults.missingMessage
 	});
 }
+
+if($.fn.propertygrid){
+	$.fn.propertygrid.defaults.columns[0][0].title = "属性名"; // 对应Name
+	$.fn.propertygrid.defaults.columns[0][1].title = "属性值"; // 对应Value
+}

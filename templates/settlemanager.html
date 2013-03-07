@@ -10,33 +10,31 @@
 		</thead>  
 	</table>  
 	<div id="settle-tools" >
-		<a id="btn_add" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-add'">增加</a> 
+		<a id="btn_add" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-add'"  onclick="javascript:settle_add()">增加</a> 
 		<a id="btn_edit" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-edit'">修改</a> 
 		<a id="btn_remove" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-remove'">删除</a> 
-		<input id="settle-searcher"></input>  
-		<div id="settle-drop" style="width:120px">  
+		<input id="settle_searcher" class="easyui-searchbox" style="width:300px"  
+			data-options="searcher:settle_query(),prompt:'请输入查询条件',menu:'#settle_drop'"></input>  
+		<div id="settle_drop" style="width:120px,display:none">  
 			<div data-options="name:'all'">按日期</div>  
 			<div data-options="name:'sports'">按公司</div>  
 		</div>  		
 	</div>
-	
+	<div id="settle_addpanel" class="easyui-dialog" title="【结算表】新增" style="width:400px;height:400px;"  
+        data-options="iconCls:'icon-save',resizable:true,modal:true,closed:true">  
+		<div id="settle_addpanel_tools" data-options="region:'north'" style='margin:5px 0px 5px 10px' >
+			<a id="btn_addpanel_add" href="#" class="easyui-linkbutton" data-options="iconCls:'icon-add'"  onclick="javascript:settle_add()">保存</a> 
+		</div>
+		<table class="easyui-propertygrid"	data-options="region:'center',url:'/settlemanager/add.json',showGroup:true,scrollbarSize:0,height:330" ></table>
+	</div>  
 <script>
 	$.parser.onComplete = function(){
-		var pager = $('#settle-grid').datagrid('getPager');
-		pager.pagination({ 
-			showPageList:false,  		
-			total:1,
-			pageSize :20,
-			beforePageText : "第",
-			afterPageText : "页",
-			displayMsg :"共{total}行"
-		});
-		$('#settle-searcher').searchbox({   
-			searcher:function(value,name){   
-				alert(value + "," + name)   
-			},   
-			menu:'#settle-drop',   
-			prompt:'请输入查询条件'  
-		}); 
-	};
+	}
+	function settle_add(){
+		$("#settle_addpanel").dialog("open");
+	}
+	function settle_query(){
+	
+	}
+
 </script>

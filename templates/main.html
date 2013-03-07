@@ -8,6 +8,7 @@
 	<link rel="stylesheet" type="text/css" href="../static/css/index.css">
 	<script type="text/javascript" src="../static/js/easyui/jquery-1.8.0.min.js"></script>
 	<script type="text/javascript" src="../static/js/easyui/jquery.easyui.min.js"></script>
+	<script type="text/javascript" src="../static/js/easyui/locale/easyui-lang-zh_CN.js"></script>
 	<script>
 		function open1(plugin,title){
 				if ($('#main-tabs').tabs('exists',title)){
@@ -35,7 +36,7 @@
 	</div>  
     <div data-options="region:'south'" style="height:20px;background-color:#e0ecff;"></div>  
     <!--<div data-options="region:'east',iconCls:'icon-reload',title:'East',split:true" style="width:100px;"></div>  -->
-    <div data-options="region:'west',title:'菜单'" style="width:170px;">
+    <div data-options="region:'west',title:'菜单',split:true" style="width:170px;">
 		<div class="easyui-accordion" data-options="animate:false,fit:true">  
 			<div title="系统管理" data-options="iconCls:'icon-setting'" style="overflow:auto;padding:3px;">  
 				<div class='menu_div' onclick='open1("sysmanager","系统管理")'>
